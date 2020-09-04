@@ -21,19 +21,13 @@ class NewsFeedTableViewCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     public func configure(object: Article) {
         self.titleLabel.text = object.title
+        self.titleLabel.numberOfLines = 0
         self.authorLabel.text = object.author
         self.publishedAtLabel.text = object.publishedAt
         self.contentLabel.text = object.content
+        self.contentLabel.numberOfLines = 0
     }
     
 }
